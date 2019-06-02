@@ -1,19 +1,12 @@
 
 import React, { Component } from 'react'
-import './App.scss';
-import axios from 'axios';
-// import fakeAxios from 'axios';
-import MockAdapter from 'axios-mock-adapter'
-let mock = new MockAdapter(axios)
+import './App.css';
+// import axios from 'axios';
+// fake api
+import axios from './mock/comments'
+
 
 const API = 'https://jsonplaceholder.typicode.com/comments';
-
-mock.onGet(/\/comments/).reply(200,
-  [
-    { id: 1, name: 'John Smith' },
-    { id: 2, name: 'John Doe' }
-  ]
-)
 
 export default class App extends Component {
   constructor(props) {
@@ -51,7 +44,7 @@ export default class App extends Component {
         <button onClick={this.urlData}>  fecth data from extranal url </button>
 <ul>
         {
-          this.state.listData.filter(o => o.id < 10).map(o => <li key="id"> {o.name} </li>)
+          this.state.listData.filter(o => o.id < 10).map(o => <li key={o.id}> {o.name} </li>)
         }
         </ul>        
       </div>
