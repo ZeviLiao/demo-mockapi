@@ -12,6 +12,4 @@ mock
         })
     .onAny().passThrough();
 
-export {
-    axios
-}
+export default axios

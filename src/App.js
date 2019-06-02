@@ -2,9 +2,8 @@
 import React, { Component } from 'react'
 import './App.css';
 // import axios from 'axios';
-// fake api
-import MockAdapter from 'axios-mock-adapter'
-import {axios} from './mock/comments'
+// fake axios api
+import axios from './mock/comments'
 
 
 const API = 'https://jsonplaceholder.typicode.com/comments';
